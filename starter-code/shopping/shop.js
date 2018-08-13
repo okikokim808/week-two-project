@@ -65,7 +65,7 @@ document.getElementById('sausages').click(function(){
 document.getElementById('nonperishables').click(function(){
     addItems('nonperishables');
 });
-
+//last part of jquerey that i cant switch back (.on function is not a function)
 document.getElementById('display').on('click', '.shopping-item', function() {
     var itemName = $(this).find('p').text();
     addItemToCart(itemName);
