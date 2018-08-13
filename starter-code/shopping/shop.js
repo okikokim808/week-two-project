@@ -56,17 +56,17 @@ var nonperishableItems = [
     }
 ];
 
-$('#bread').click(function() {
+document.getElementById('bread').click(function() {
     addItems('bread');
 });
-$('#sausages').click(function(){
+document.getElementById('sausages').click(function(){
     addItems('sausages');
 });
-$('#nonperishables').click(function(){
+document.getElementById('nonperishables').click(function(){
     addItems('nonperishables');
 });
 
-$('#display').on('click', '.shopping-item', function() {
+document.getElementById('display').on('click', '.shopping-item', function() {
     var itemName = $(this).find('p').text();
     addItemToCart(itemName);
 });
@@ -88,7 +88,7 @@ function addItems(category) {
         default:
     }
 
-    var shoppingList = $('<ul>');
+    var shoppingList = document.getElementsByTagName('ul');
     for(var i = 0; i < myItems.length; i++) {
         var currentItem = myItems[i];
 
@@ -98,15 +98,15 @@ function addItems(category) {
                 <p>${currentItem.name}</p>
             </li>`);
     }
-    $('#display').append(shoppingList);
+    document.getElementById('display').append(shoppingList);
 }
 
 function clearItems() {
-    $('#display').empty();
+    document.getElementById('display').empty();
 }
 
 function addItemToCart(item) {
-    $('#rightCol ul').append(`
+    document.querySelectorAll('ul#rightCol').append(`
         <li>
             ${item}
         </li>
