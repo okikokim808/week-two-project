@@ -56,17 +56,17 @@ var nonperishableItems = [
     }
 ];
 
-document.getElementById('bread').click(function() {
+document.getElementById('bread').addEventListener("click", function() {
     addItems('bread');
 });
-document.getElementById('sausages').click(function(){
+document.getElementById('sausages').addEventListener("click", function(){
     addItems('sausages');
 });
-document.getElementById('nonperishables').click(function(){
+document.getElementById('nonperishables').addEventListener("click", function(){
     addItems('nonperishables');
 });
-//last part of jquerey that i cant switch back (.on function is not a function)
-document.getElementById('display').on('click', '.shopping-item', function() {
+
+$('#display').on('click', '.shopping-item', function() {
     var itemName = $(this).find('p').text();
     addItemToCart(itemName);
 });
@@ -88,7 +88,7 @@ function addItems(category) {
         default:
     }
 
-    var shoppingList = document.getElementsByTagName('ul');
+    var shoppingList = $('<ul>');
     for(var i = 0; i < myItems.length; i++) {
         var currentItem = myItems[i];
 
@@ -98,15 +98,15 @@ function addItems(category) {
                 <p>${currentItem.name}</p>
             </li>`);
     }
-    document.getElementById('display').append(shoppingList);
+    $('#display').append(shoppingList);
 }
 
 function clearItems() {
-    document.getElementById('display').empty();
+    $('#display').empty();
 }
 
 function addItemToCart(item) {
-    document.querySelectorAll('ul#rightCol').append(`
+    $('#rightCol ul').append(`
         <li>
             ${item}
         </li>
