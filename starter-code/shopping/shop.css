@@ -1,29 +1,32 @@
 body{
     display: flex;
 }
-.leftCol{
+#leftCol{
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.categories{
+#categories{
     background-color: #B81F1E;
+    text-align: center;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: space-around;
-    justify-content: space-around;
 }
-.buttons{
+#display ul{
+    list-style: none;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
 }
-.buttons button{
+#display li{
+    cursor: pointer;
+    text-align: center;
+}
+button{
     border: none;
     background-color: #B81F1E;
     color: whitesmoke;
+    cursor: pointer;
     font-size: 2vw;
     margin-bottom: 10px;
     font-family: Arial;
@@ -32,10 +35,23 @@ h1{
     text-align: center;
     color: whitesmoke;
 }
-.rightCol{
+img {
+    height: 25vh;
+    width: 20vw;
+}
+.shopping-item p {
+    font-size: 2vw;
+}
+#rightCol{
     width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
     background-color: lightgray;
+}
+#rightCol ul{
+    list-style: none;
+}
+#rightCol li{
+    color: #B81F1E;
+    font-size: 3vw;
+    text-decoration: none;
 }
